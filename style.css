@@ -17,7 +17,8 @@ header{
     position: relative;
 }
 
-main .city{
+/* CITY */
+.city{
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -26,7 +27,7 @@ main .city{
     padding: 0.5rem;
 }
 
-main .city i{
+.city i{
     font-size: 1.5rem;
 }
 
