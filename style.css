@@ -1,64 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap');
-*,::before,::after{
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap");
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-body{
-    margin: 0px;
-    font-family: "Roboto", sans-serif;
+body {
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
 }
 
-header{
-    font-family: 'Shrikhand', cursive;
-    text-align: center;
-    box-shadow: 0 0 0.5rem grey;
-    padding: 0.3rem;
-    position: relative;
+header {
+  font-family: 'Shrikhand', cursive;
+  text-align: center;
+  -webkit-box-shadow: 0 0 0.5rem grey;
+          box-shadow: 0 0 0.5rem grey;
+  padding: 0.3rem;
+  position: relative;
 }
 
-/* CITY */
-.city{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background-color: #f3f3f3;
-    justify-content: center;
-    padding: 0.5rem;
+.city {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  background-color: #f3f3f3;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0.5rem;
 }
 
-.city i{
-    font-size: 1.5rem;
+.city i {
+  font-size: 1.5rem;
 }
 
-/* EXPLORER */
-.explorer{
-    text-align: center;
+.explorer {
+  text-align: center;
 }
 
-.explorer h2{
-    margin-top: 2rem;
-    font-size: 2rem;
+.explorer h2 {
+  margin-top: 2rem;
+  font-size: 2rem;
 }
 
-.explorer p{
-    font-size: 1rem;
+.explorer p {
+  font-size: 1rem;
 }
 
-.explorer button{
-    color: white;
-    font-weight: 300;
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 1.5rem;
-    box-shadow: 2px 1px 8px -3px #000;
-    background-image: linear-gradient(rgba(255, 121, 218),rgba(147, 86, 220));
-    transition: all 200ms;
-    margin-top: 1rem;
+.explorer button {
+  color: white;
+  font-weight: 300;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 1.5rem;
+  -webkit-box-shadow: 2px 1px 8px -3px #000;
+          box-shadow: 2px 1px 8px -3px #000;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+  margin-top: 1rem;
 }
 
-.explorer button:hover{
-    transform: scale(1.02);
-    opacity: 0.9;
+.explorer button:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  opacity: 0.9;
 }
+/*# sourceMappingURL=style.css.map */

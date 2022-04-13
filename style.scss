@@ -1,5 +1,3 @@
-@import "./sass/base.scss";
-@import "./sass/layout/header.scss";
-@import "./sass/layout/city.scss";
-@import "./sass/layout/explorer.scss";
-
+@import "./sass/layout/all_mixin";
+@import "./sass/base";
+@import "./sass/layout/index_page";
