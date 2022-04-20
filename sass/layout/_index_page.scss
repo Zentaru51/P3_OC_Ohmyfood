@@ -10,7 +10,7 @@ header{
     display: flex;
     align-items: center;
     gap: 1rem;
-    background-color: #f3f3f3;
+    background-color: $lightgrey;
     justify-content: center;
     padding: 0.5rem;
     i{
@@ -36,13 +36,128 @@ header{
         padding: 1rem 2rem;
         border: none;
         border-radius: 1.5rem;
-        box-shadow: 2px 1px 8px -3px #000;
-        background-image: linear-gradient(#FF79DA,#9356DC);
+        @include gradient-1;
         transition: all 200ms;
         margin-top: 1rem;
+        @include box-shadow;
         &:hover{
             @include button-zoom;
         }
     }
     
-} 
+}
+
+.function{
+    counter-reset: number;
+    padding: 0 1rem;
+    margin-bottom: 3.5rem;
+    ol{
+        display: flex;
+        gap: 2rem;
+        list-style-type: none;
+        @media (max-width: 1000px){
+            flex-direction: column;
+        }
+    }
+    li{
+        position: relative;
+        
+        background-color: $lightgrey;
+        padding: 1.5rem 2rem;
+        flex-grow: 1;
+        border-radius: 1rem;
+        @include box-shadow;
+        font-size: 17px;
+        i.fas{
+              margin-right: 1rem;
+              color: grey;
+        }
+        &:hover{
+            @include button-zoom;
+            opacity: 1;
+            background-color: #dabcff;
+            .fas{
+                color: $primaire_color;
+            }
+        }
+        &::before{
+            counter-increment: number;
+            content: counter(number);
+            color: white;
+            background-color: $primaire_color;
+            width: 2rem;
+            height: 2rem;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 1rem;
+            left: -1rem;
+        }
+    }
+}
+.resto{
+    padding: 2rem 1rem;
+    background-color: $lightgrey;
+    .menu_carte{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        .card{
+            background-color: white;
+            border-radius: 1rem;
+            img{
+                border-radius: 1rem 1rem 0 0;
+                height: 15rem;
+                width: 100%;
+                object-fit: cover;
+            }
+            .description{
+                padding: 1rem ;
+                position: relative;
+                h3{
+                    margin: 0;
+                    margin-bottom: .5rem
+                }
+                i{
+                    font-size: 2rem;
+                    position: absolute;
+                    right: 1rem;
+                    top: 1.2rem
+                }
+                .fas{
+                    color: transparent;
+                    @include gradient-2;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    opacity: 0;
+                    transition: all 200ms;
+                }
+                &:hover .fas{
+                    opacity: 1;
+                    transform: scale(1.1);
+                }
+            }
+            @include box-shadow
+        }
+        .new{
+            position: relative;
+            &::before{
+                content: "Nouveau";
+                position: absolute;
+                height: 2rem;
+                width: 5rem;
+                background-color: $tertiaire_color;
+                color: darken($tertiaire_color, 50%);
+                display: grid;
+                place-items: center;
+                right: 1rem;
+                top: 1rem;
+                @include box-shadow;
+            }
+        }
+        @media (max-width: 1000px) {
+            grid-template-columns: 1fr;
+        }
+    }
+}

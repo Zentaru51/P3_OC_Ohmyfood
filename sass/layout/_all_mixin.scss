@@ -2,3 +2,15 @@
     transform: scale(1.02);
     opacity: 0.9;
 }
+
+@mixin box-shadow {
+    box-shadow: 2px 1px 8px -3px #000;
+}
+
+@mixin gradient-1 {
+    background-image: linear-gradient($secondaire_color,$primaire_color);
+}
+
+@mixin gradient-2 {
+    background-image: linear-gradient($primaire_color,$secondaire_color);
+}

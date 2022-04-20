@@ -10,6 +10,15 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+h2 {
+  padding: 0 0 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 header {
   font-family: 'Shrikhand', cursive;
   text-align: center;
@@ -58,18 +67,176 @@ header {
   padding: 1rem 2rem;
   border: none;
   border-radius: 1.5rem;
-  -webkit-box-shadow: 2px 1px 8px -3px #000;
-          box-shadow: 2px 1px 8px -3px #000;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   background-image: linear-gradient(#FF79DA, #9356DC);
   -webkit-transition: all 200ms;
   transition: all 200ms;
   margin-top: 1rem;
+  -webkit-box-shadow: 2px 1px 8px -3px #000;
+          box-shadow: 2px 1px 8px -3px #000;
 }
 
 .explorer button:hover {
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
   opacity: 0.9;
+}
+
+.function {
+  counter-reset: number;
+  padding: 0 1rem;
+  margin-bottom: 3.5rem;
+}
+
+.function ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  list-style-type: none;
+}
+
+@media (max-width: 1000px) {
+  .function ol {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.function li {
+  position: relative;
+  background-color: #f3f3f3;
+  padding: 1.5rem 2rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border-radius: 1rem;
+  -webkit-box-shadow: 2px 1px 8px -3px #000;
+          box-shadow: 2px 1px 8px -3px #000;
+  font-size: 17px;
+}
+
+.function li i.fas {
+  margin-right: 1rem;
+  color: grey;
+}
+
+.function li:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  opacity: 0.9;
+  opacity: 1;
+  background-color: #dabcff;
+}
+
+.function li:hover .fas {
+  color: #9356DC;
+}
+
+.function li::before {
+  counter-increment: number;
+  content: counter(number);
+  color: white;
+  background-color: #9356DC;
+  width: 2rem;
+  height: 2rem;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 1rem;
+  left: -1rem;
+}
+
+.resto {
+  padding: 2rem 1rem;
+  background-color: #f3f3f3;
+}
+
+.resto .menu_carte {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.resto .menu_carte .card {
+  background-color: white;
+  border-radius: 1rem;
+  -webkit-box-shadow: 2px 1px 8px -3px #000;
+          box-shadow: 2px 1px 8px -3px #000;
+}
+
+.resto .menu_carte .card img {
+  border-radius: 1rem 1rem 0 0;
+  height: 15rem;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.resto .menu_carte .card .description {
+  padding: 1rem;
+  position: relative;
+}
+
+.resto .menu_carte .card .description h3 {
+  margin: 0;
+  margin-bottom: .5rem;
+}
+
+.resto .menu_carte .card .description i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 1.2rem;
+}
+
+.resto .menu_carte .card .description .fas {
+  color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.resto .menu_carte .card .description:hover .fas {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.resto .menu_carte .new {
+  position: relative;
+}
+
+.resto .menu_carte .new::before {
+  content: "Nouveau";
+  position: absolute;
+  height: 2rem;
+  width: 5rem;
+  background-color: #99E2D0;
+  color: #1b6150;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  right: 1rem;
+  top: 1rem;
+  -webkit-box-shadow: 2px 1px 8px -3px #000;
+          box-shadow: 2px 1px 8px -3px #000;
+}
+
+@media (max-width: 1000px) {
+  .resto .menu_carte {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 /*# sourceMappingURL=style.css.map */
