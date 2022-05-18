@@ -1,3 +1,4 @@
+@use "./variable" as color;
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap');
 *,::before,::after{
@@ -16,4 +17,25 @@ h2{
 a{
     text-decoration: none;
     color: inherit;
+}
+
+footer{
+    background-color: color.$dark_grey;
+    padding: 1rem 2rem;
+    color: white;
+    h2{
+        font-weight: 500;
+        font-family: "Shrikhand", "sans-serif";
+        padding: 1rem 0;
+    }
+    p{
+        padding: .2rem;
+    }
+}
+
+@media (min-width:2000px) {
+    header,main,footer,.city{
+        max-width: 2300px;
+        margin: auto;
+    }
 }

@@ -1,5 +1,7 @@
-@mixin button-zoom {
-    transform: scale(1.02);
+@use "../variable" as color;
+
+@mixin button-zoom($zoom: 1.02, $transfo: translateY(0)) {
+    transform: $transfo scale($zoom);
     opacity: 0.9;
 }
 
@@ -8,9 +10,57 @@
 }
 
 @mixin gradient-1 {
-    background-image: linear-gradient($secondaire_color,$primaire_color);
+    background-image: linear-gradient(color.$secondaire_color,color.$primaire_color);
 }
 
 @mixin gradient-2 {
-    background-image: linear-gradient($primaire_color,$secondaire_color);
+    background-image: linear-gradient(color.$primaire_color,color.$secondaire_color);
+}
+
+@mixin heart {
+    padding: 1rem ;
+    position: relative;
+    i{
+        font-size: 2rem;
+        position: absolute;
+        right: 1rem;
+        top: 1.2rem
+    }
+    .fas{
+        color: transparent;
+        @include gradient-2;
+        background-clip: text;
+        -webkit-background-clip: text;
+        opacity: 0;
+        transition: all 200ms;
+    }
+    &:hover .fas{
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+@mixin b_button {
+    color: white;
+    font-weight: 300;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 1.5rem;
+    transition: all 200ms;
+    margin-top: 1rem;
+    cursor: pointer;
+    @include gradient-1;
+    @include box-shadow;
+    &:hover{
+        @include button-zoom;
+    }
+}
+
+@mixin delay {
+    @for $i from 1 through 5{
+        &:nth-child(#{$i}){
+            animation-delay: 0.1s * $i;
+        }
+    }
 }

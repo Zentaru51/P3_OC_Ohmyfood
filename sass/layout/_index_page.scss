@@ -1,3 +1,26 @@
+@use "./all_mixin" as mixin;
+@use "../variable" as color;
+
+.loader{
+    position: fixed;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    inset: 0;
+    z-index: 1;
+    background-color: #ffffff;
+    opacity: 0.7;
+    animation: finish 0.5s 3s forwards;
+    transform-origin: top;
+    i{
+        animation: spin 3s infinite linear;
+        background: -webkit-linear-gradient(color.$secondaire_color,color.$primaire_color);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
 header{
     font-family: 'Shrikhand', cursive;
     text-align: center;
@@ -10,9 +33,12 @@ header{
     display: flex;
     align-items: center;
     gap: 1rem;
-    background-color: $lightgrey;
+    background-color: color.$lightgrey;
     justify-content: center;
     padding: 0.5rem;
+    h2{
+        padding: 0;
+    }
     i{
         font-size: 1.5rem;
     }
@@ -21,7 +47,7 @@ header{
 .explorer{
     text-align: center;
     h2{
-        margin-top: 2rem;
+        margin: 0;
         font-size: 2rem;
     }
     
@@ -30,19 +56,7 @@ header{
     }
     
     button{
-        color: white;
-        font-weight: 300;
-        font-size: 1.5rem;
-        padding: 1rem 2rem;
-        border: none;
-        border-radius: 1.5rem;
-        @include gradient-1;
-        transition: all 200ms;
-        margin-top: 1rem;
-        @include box-shadow;
-        &:hover{
-            @include button-zoom;
-        }
+        @include mixin.b_button;
     }
     
 }
@@ -50,41 +64,41 @@ header{
 .function{
     counter-reset: number;
     padding: 0 1rem;
-    margin-bottom: 3.5rem;
     ol{
         display: flex;
         gap: 2rem;
         list-style-type: none;
-        @media (max-width: 1000px){
-            flex-direction: column;
+        flex-direction: column;
+        @media (min-width: 1000px){
+            flex-direction: row;
         }
     }
     li{
         position: relative;
         
-        background-color: $lightgrey;
+        background-color: color.$lightgrey;
         padding: 1.5rem 2rem;
         flex-grow: 1;
         border-radius: 1rem;
-        @include box-shadow;
+        @include mixin.box-shadow;
         font-size: 17px;
         i.fas{
               margin-right: 1rem;
               color: grey;
         }
         &:hover{
-            @include button-zoom;
+            @include mixin.button-zoom;
             opacity: 1;
             background-color: #dabcff;
             .fas{
-                color: $primaire_color;
+                color: color.$primaire_color;
             }
         }
         &::before{
             counter-increment: number;
             content: counter(number);
             color: white;
-            background-color: $primaire_color;
+            background-color: color.$primaire_color;
             width: 2rem;
             height: 2rem;
             display: grid;
@@ -98,10 +112,10 @@ header{
 }
 .resto{
     padding: 2rem 1rem;
-    background-color: $lightgrey;
+    background-color: color.$lightgrey;
     .menu_carte{
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 2rem;
         .card{
             background-color: white;
@@ -113,32 +127,13 @@ header{
                 object-fit: cover;
             }
             .description{
-                padding: 1rem ;
-                position: relative;
                 h3{
                     margin: 0;
                     margin-bottom: .5rem
                 }
-                i{
-                    font-size: 2rem;
-                    position: absolute;
-                    right: 1rem;
-                    top: 1.2rem
-                }
-                .fas{
-                    color: transparent;
-                    @include gradient-2;
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    opacity: 0;
-                    transition: all 200ms;
-                }
-                &:hover .fas{
-                    opacity: 1;
-                    transform: scale(1.1);
-                }
+                @include mixin.heart
             }
-            @include box-shadow
+            @include mixin.box-shadow
         }
         .new{
             position: relative;
@@ -147,17 +142,17 @@ header{
                 position: absolute;
                 height: 2rem;
                 width: 5rem;
-                background-color: $tertiaire_color;
-                color: darken($tertiaire_color, 50%);
+                background-color: color.$tertiaire_color;
+                color: darken(color.$tertiaire_color, 50%);
                 display: grid;
                 place-items: center;
                 right: 1rem;
                 top: 1rem;
-                @include box-shadow;
+                @include mixin.box-shadow;
             }
         }
-        @media (max-width: 1000px) {
-            grid-template-columns: 1fr;
+        @media (min-width: 1000px) {
+            grid-template-columns: 1fr 1fr;
         }
     }
 }

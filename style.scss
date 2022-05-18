@@ -1,4 +1,5 @@
-@import "./sass/variable";
-@import "./sass/layout/all_mixin";
-@import "./sass/base";
-@import "./sass/layout/index_page";
+@use "./sass/variable";
+@use "./sass/layout/all_mixin";
+@use "./sass/base";
+@use "./sass/layout/index_page";
+@use "./sass/layout/resto";
