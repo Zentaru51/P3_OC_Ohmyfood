@@ -448,12 +448,12 @@ main {
           animation: spin 0.5s ease;
 }
 
-section.order {
+.order {
   height: 20vh;
   display: grid;
   place-items: center;
 }
-section.order button {
+.order button {
   color: white;
   font-weight: 300;
   font-size: 1.5rem;
@@ -466,7 +466,7 @@ section.order button {
   background-image: linear-gradient(#FF79DA, #9356DC);
   box-shadow: 2px 1px 8px -3px #000;
 }
-section.order button:hover {
+.order button:hover {
   transform: translateY(0) scale(1.02);
   opacity: 0.9;
 }
